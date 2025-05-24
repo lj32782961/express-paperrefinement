@@ -1,0 +1,396 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 页面内容居中 */
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+/* 固定顶部的标题栏 */
+#header {
+  width: 90%;
+  max-width: 1000px;
+  /* 最大宽度 */
+  background-color: #007bff;
+  color: white;
+  padding: 7.5px;
+  text-align: center;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#layoutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 水平居中 */
+  width: 90%;
+  max-width: 1000px;
+  /* 最大宽度 */
+  margin-top: 0x;
+  /* 为 header 预留空间 */
+  padding-top: 5px;
+  /* 增加顶部间距 */
+}
+
+/* 中间聊天区 */
+#chatSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 水平居中 */
+  gap: 10px;
+}
+
+#chatContainer {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 5px;
+}
+
+#chatMessages {
+  overflow-y: auto;
+  height: 400px;
+  margin-bottom: 0px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0px;
+  background-color: #fefefe;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 15px;
+  max-width: 80%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message.user {
+  background-color: #e3f2fd;
+  margin-left: auto;
+}
+
+.message.ai {
+  background-color: #f5f5f5;
+  margin-right: auto;
+}
+
+/* 命令按钮网格布局 */
+#commandButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 5px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.command-button {
+  width: 100%;
+  padding: 7.5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-align: center;
+}
+
+.command-button.active {
+  background-color: #28a745;
+  /*transform: translateX(5px);*/
+}
+
+/* 输入区域样式 */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+
+
+
+
+/* 播放按钮样式 */
+.play-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.play-button.stop {
+  background-color: #dc3545;
+}
+
+#sendButton {
+  width: 120px;
+  /* 固定宽度 */
+  height: 40px;
+  /* 按钮高度 */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#clearButton {
+  width: 80px;
+  /* 固定宽度 */
+  height: 40px;
+  /* 按钮高度 */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* 滚动按钮样式 */
+.scroll-button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  /* 按钮宽度 */
+  height: 40px;
+  /* 按钮高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+/* 左侧滚动按钮 */
+.scroll-button.left {
+  order: 1;
+  /* 左侧 */
+}
+
+/* 右侧滚动按钮 */
+.scroll-button.right {
+  order: 3;
+  /* 右侧 */
+}
+
+/* 发送按钮 */
+#sendButton {
+  order: 2;
+  /* 中间 */
+}
+
+#dailyStoryContainer {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#dailyStoryContainer h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+}
+
+#dailyStoryContainer p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* 话筒图标样式 */
+.microphone-icon {
+  width: 48px;
+  height: 48px;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"%3E%3Cpath d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 2.79 3.28-3.44 6-6.26 6-2.79v-1h-1.7z"/%3E%3C/svg%3E');
+  /* 替换为你的话筒 SVG 图标 */
+  background-size: cover;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 话筒动画样式 */
+.microphone-icon.recording {
+  animation: mic-animation 0.5s infinite alternate;
+  /* 使用 filter: invert(1); 反转颜色 */
+  filter: invert(30%) sepia(70%) saturate(600%) hue-rotate(130deg) brightness(100%) contrast(100%);
+}
+
+@keyframes mic-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 停止按钮样式 */
+.stop-button {
+  width: 48px;
+  /* 设置按钮宽度 */
+  height: 48px;
+  /* 设置按钮高度 */
+  border-radius: 50%;
+  /* 设置为圆形 */
+  background-color: #f44336;
+  /* 红色背景 */
+  border: none;
+  /* 移除边框 */
+  cursor: pointer;
+  /* 鼠标悬停时显示手型 */
+  display: inline-flex;
+  /* 使用 flex 布局，让正方形居中 */
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: center;
+  /* 水平居中 */
+  margin-left: 5px;
+  /* 保持与其他元素的间距 */
+  padding: 0;
+  /* 移除内边距 */
+  overflow: hidden;
+  /* 确保正方形不超出圆形 */
+}
+
+/* 停止按钮内部的正方形 */
+.stop-button::before {
+  content: '';
+  /* 必须设置 content 才能显示伪元素 */
+  display: block;
+  /* 设置为块级元素，以便设置宽高 */
+  width: 24px;
+  /* 正方形宽度 */
+  height: 24px;
+  /* 正方形高度 */
+  background-color: white;
+  /* 白色正方形 */
+}
+
+/* 输入框 + 语音输入容器 */
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  /* 可选：与上方的框背景一致 */
+  border: 1px solid #ccc;
+  /* 可选：与上方的框边框一致 */
+  border-radius: 4px;
+  /* 可选：圆角与上方的框一致 */
+  padding: 8px;
+  /* 增加内边距，使内容不贴边 */
+}
+
+#userInput {
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  /* 禁止调整大小 */
+  /*overflow: hidden; /* 隐藏滚动条 */
+  padding: 10px;
+  box-sizing: border-box;
+  /* caret-color: #000; 保持光标可见 */
+  flex-grow: 1;
+  /* 让 textarea 尽可能占据剩余空间 */
+}
+
+
+.other-links-container {
+
+  display: block;
+  ;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 10px 0;
+  
+}
+
+.other-links-title {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.other-links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.other-links-list a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-bottom: 8px;
+  min-width: 100px;
+  display: inline-block;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.other-links-list a:hover {
+  /* color: #0056b3; */
+  /* text-decoration: underline; */
+  background-color: #28a745;
+}
+
+/* 每行最多3个链接 */
+.other-links-list a:nth-child(3n+1) {
+  clear: left;
+}
+
+.hidden {
+  display: none;
+}

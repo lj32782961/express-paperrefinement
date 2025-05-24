@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-9735762483826244">
+  <title>Gemini论文润色助手</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9735762483826244"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.0.18/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- <div id="header">
+    Gemini论文润色助手
+  </div> -->
+  <div id="header">
+    <label for="modelSelector">选择模型：</label>
+    <select id="modelSelector">
+      <option value="gemini-2.5-flash-preview-05-20">Gemini 2.5 Flash 预览版 05-20</option>
+      <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+      <option value="gemini-2.5-pro-exp-03-25">Gemini 2.5 Pro Exp 03-25</option>
+      <!-- <option value="gemini-2.5-pro-preview-03-25">Gemini 2.5 Pro Preview 03-25</option> -->
+      <!-- gemini-2.5-pro-preview-03-25 不免费 -->
+      <option value="gemini-2.0-flash-thinking-exp-01-21">Gemini 2.0 Flash Thinking Experimental 01-21</option>
+      <!-- <option value="gemini-2.0-flash-exp-image-generation">Gemini 2.0 Flash Image Generation Experimental</option> -->
+      <!-- gemini-2.0-flash-exp-image-generation 已经在“生成图片”中默认使用 -->
+    </select>
+  </div>
+
+  <div id="layoutContainer">
+    <div id="chatSection">
+      <div id="chatContainer">
+        <div id="chatMessages"></div>
+      </div>
+      <div id="commandButtons">
+        <!-- 按钮将通过 JavaScript 动态添加 -->
+      </div>
+
+      <div class="input-container">
+        <textarea id="userInput" placeholder="在这里输入内容..."></textarea>
+        <button id="clearButton">清空</button>
+        <span id="microphoneButton" class="microphone-icon"></span>
+        <button id="stopButton" class="stop-button hidden"></button>
+      </div>
+
+      <div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+          <button id="sendButton">发送</button>
+          <!-- Scroll To Top & Bottom Buttons -->
+          <button class="scroll-button left" id="scrollTopButton">↑ Top</button>
+          <button class="scroll-button right" id="scrollBottomButton">↓ Bottom</button>
+        </div>
+
+      </div>
+      <!-- https://txttool.cn/editor-ckeditor/ -->
+    </div>
+ <div class="other-links-container">
+    <div class="other-links-title">其他链接：</div>
+    
+    <div class="other-links-list">
+      <a href="https://endnote2latex.vercel.app/" target="_blank">Latex参考文献格式化工具</a>
+      
+    </div>
+  </div>
+
+  </div>
+
+ 
+
+  <script src="script.js" type="module"></script>
+
+</body>
+
+</html>
