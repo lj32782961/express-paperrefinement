@@ -150,6 +150,9 @@ body {
 }
 
 #sendButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 120px;
   /* 固定宽度 */
   height: 40px;
@@ -164,6 +167,9 @@ body {
 }
 
 #clearButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80px;
   /* 固定宽度 */
   height: 40px;
@@ -352,7 +358,7 @@ body {
   border-radius: 4px;
   padding: 8px;
   margin: 10px 0;
-  
+
 }
 
 .other-links-title {
