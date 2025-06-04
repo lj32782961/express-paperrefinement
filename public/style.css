@@ -380,10 +380,12 @@ body {
   transition: color 0.2s;
   margin-bottom: 8px;
   min-width: 100px;
-  display: inline-block;
+  display: flex;
   background-color: #007bff;
   padding: 5px 10px;
   border-radius: 5px;
+  justify-content: center; /* 水平居中 */
+  align-items: center;    /* 垂直居中 */
 }
 
 .other-links-list a:hover {
