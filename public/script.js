@@ -119,7 +119,7 @@ let definedModel;
 // document.addEventListener('DOMContentLoaded', initializeModelSelector);
 function initializeModelSelector() {
     const modelSelector = document.getElementById('modelSelector');
-    const defaultModel = 'gemini-2.0-flash';
+    const defaultModel = 'gemini-2.5-flash';
 
     // 从 localStorage 中获取模型值
     const savedModel = localStorage.getItem('selectedModel') || defaultModel;
